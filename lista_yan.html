@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>RECEITAS DO YAN</h2>
+</body>
+
+<script>
+     var nomeDaListaArray = [];
+
+    var quantidadeElementosNoArray = parseInt(prompt("Quantos itens você vai adicionar?"));
+
+    var posicaoElemento = 1;
+
+    while( posicaoElemento <= quantidadeElementosNoArray) {
+
+        var item = prompt("Informe o item " + posicaoElemento);
+
+        var existe = false;
+
+        for(var posicao = 0; posicao <= nomeDaListaArray.length; posicao++){
+            if(nomeDaListaArray[posicao] == item){
+                existe = true;
+                break;
+            }
+        }
+        if(existe == false){
+            nomeDaListaArray.push(item);
+            posicaoElemento++;
+    }
+    }
+ 
+        console.log(nomeDaListaArray);
+</script>
+</html>

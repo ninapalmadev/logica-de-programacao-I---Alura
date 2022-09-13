@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Receitas do Yan</h1>
+</body>
+
+<script>
+    var ingredientes = [];    //lista vazia. esperando a chegada dos elementos do array
+
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+    //aqui será a entrada de QUANTOS elementos serão colocados no array INGREDIENTES, na lista
+
+    var contador = 1;
+    //serve para adicionar o primeiro ingrediente na lista do array. 
+    //na sequencia ele irá repetir o loop adicionando mais ingredientes. 
+    
+    while( contador <= quantidade) {
+        //enquanto contador for menor ou igual a quantidade de ingredientes que se quer adicionar, repetirá o loop até o ultimo ingrediente
+
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+            //recebendo a quantidade de arrays, passará a pedir o nome dos elementos para serem colocados 
+
+        var existe = false;
+        //criamos uma variável chamada EXISTE, ela inicia com o false e só é verdadeira, se o elemento existir. 
+        //Caso isso aconteça, não faz sentido continuar varrendo o array e saímos do loop por meio do break. 
+
+        for( var posicao = 0; posicao < ingredientes.length; posicao++) {
+            //variavel posicao começa em 0 pois é o primeiro '1º' ingrediente.
+            // ingredientes.lenght = será o tamanho do array, quantos elementos serão colocados ali. 
+            //posicao++ adiciona uma posição ate atingir o tamanho de arrays indicados na quantidade de ingredientes a serem add
+
+            //conferir se o elemento já foi colocado:
+            if( ingredientes[posicao] == ingrediente) {
+                //SE o ingrediente adicionado JÁ existir na lista, para o loop. por isso existe esta como TRUE
+                existe = true;
+                break; //O break "quebra" o for e o while, no final, testamos a variável existe para saber se incluímos 
+            //ou não o ingrediente.
+            }
+            }
+
+            if( existe == false) {
+                //verificada a lista, o ingrediente NÃO existe, ele é adicionado ao array e passa o contador++ para receber o proximo elemento
+                ingredientes.push(ingrediente);
+                contador++;
+                }
+                }
+
+                console.log(ingredientes);
+
+        //Muita atenção, pois só podemos incrementar a variável contador quando o ingrediente não existir. 
+        //Isso é importante, uma vez que ele existe, precisamos repetir a pergunta por novos ingredientes ao usuário.
+</script>
+
+</html>

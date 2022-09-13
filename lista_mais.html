@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Receitas do Yan</h1>
+</body>
+
+
+
+<script>
+    var ingredientes = []; //array
+
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+    //quantos elementos no array
+    var contador = 1;
+    //adicionará os elementos conforme forem sendo adicionados
+
+    while( contador <= quantidade) {
+        //enquanto contador for menor ou igual a qntdd a ser adicionada, loop continua
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+        //usuario coloca o ingrediente e contador aumenta uma posição
+        var existe = false; //supoem que o elemento nao existe
+        //true = SÓ se o elemento ja tiver sido adicionado
+
+        //agora começa as condições para verificar se o elemento existe ou nao, conforme posição do array
+            for(var posicao = 0; posicao < ingredientes.length; posicao++){
+                //variavel       condição   tamanho de elementos quanto em quanto
+            //conferir se elemento ja foi colocado
+                if(ingredientes[posicao] == ingrediente){
+                    //lista do array,  IGUAL ingrediente adicionado pelo prompt
+                    existe = true;
+                    break; //pede outro ingrediente no prompt
+                }
+            }
+                if(existe == false){
+                    //SE o ingrediente colocado no prompt nao tiver ainda na lista:
+                    ingredientes.push(ingrediente);
+                    //adiciona o elemento para a lista do array
+                    contador++;
+                    //aguarda inserir mais um elemento na proxima posição
+                }
+                }
+
+        console.log(ingredientes);
+</script>
+</html>
